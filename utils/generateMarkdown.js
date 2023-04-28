@@ -6,7 +6,7 @@ function renderLicenseBadge(license) {
   } 
     return "";
 };
-
+console.log(renderLicenseBadge);
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
@@ -44,7 +44,7 @@ ${data.usage}
 
 ## License
 ${data.license}
-
+link format [title](https://www.example.com)
 
 
 ## Contact Information
