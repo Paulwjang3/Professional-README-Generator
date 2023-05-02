@@ -11,14 +11,19 @@ console.log(renderLicenseBadge);
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "none") {
-    return `*[License]{#license}`;
+    return `\n* [License]{#license}\n`;
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  
+  if (license !== "none") {
+    return ` ##License
+
+      Licensed with the ${license} license. `;
+  }
+
 }
 
 // TODO: Create a function to generate markdown for README
@@ -31,12 +36,12 @@ ${renderLicenseBadge(data.license)}
 ${data.description}
 
 ## Table of Contents
-*[Description](#description)
-*[Installation](#installation)
-*[Usage](#usage)
-${renderLicenseLink(data.license)}
-*[Contact](#contact)
-*[Contributors](#contributors)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- ${renderLicenseLink(data.license)}
+- [Contact](#contact)
+- [Contributors](#contributors)
 
 ## Installation
 ${data.installation}
@@ -49,8 +54,9 @@ ${renderLicenseSection(data.license)}
 
 ## Contact Information
 github.com/${data.github}
-${data.email}`
+- Name - ${data.name}
+- Email - ${data.email}
+- Contributors - ${data.contributors}`
 }
 
 module.exports = generateMarkdown;
-
